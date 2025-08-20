@@ -75,6 +75,18 @@
     }
       /* Tuỳ chọn: tô vàng thương hiệu — thêm class 'brand-yellow' vào .client-logos để áp dụng */
     .client-logos.brand-yellow img.client-logo { filter: grayscale(1) brightness(0) sepia(1) saturate(6000%) hue-rotate(5deg); }
+    /* Hình ảnh (preview trên trang chủ) */
+.album-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: transform .2s ease;
+  box-shadow: 0 8px 16px rgba(0,0,0,.08);
+}
+.album-thumb:hover { transform: translateY(-2px); }
+
   </style>
 </head>
 <body>
@@ -314,6 +326,41 @@
         </div>
       </div>
     </section>
+    <!-- Hình ảnh (preview) -->
+<section id="hinhanh">
+  <div class="container wrapper">
+    <h2 class="section-title">Hình ảnh</h2>
+
+    <!-- Mobile: 2 cột (2 hàng cho 4 ảnh) | ≥md: 4 cột 1 hàng -->
+    <div class="row g-4 row-cols-2 row-cols-md-4">
+      <div class="col">
+        <div class="ratio ratio-16x9">
+          <img src="img/album/ab_1.jpg" alt="Ảnh album 1" class="album-thumb" loading="lazy">
+        </div>
+      </div>
+      <div class="col">
+        <div class="ratio ratio-16x9">
+          <img src="img/album/ab_2.jpg" alt="Ảnh album 2" class="album-thumb" loading="lazy">
+        </div>
+      </div>
+      <div class="col">
+        <div class="ratio ratio-16x9">
+          <img src="img/album/ab_3.jpg" alt="Ảnh album 3" class="album-thumb" loading="lazy">
+        </div>
+      </div>
+      <div class="col">
+        <div class="ratio ratio-16x9">
+          <img src="img/album/ab_4.jpg" alt="Ảnh album 4" class="album-thumb" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="album.html" class="btn btn-lg call-now-btn">Xem thêm ảnh</a>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <!-- Footer -->
