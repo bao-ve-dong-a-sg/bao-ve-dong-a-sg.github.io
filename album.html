@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Album ảnh – ĐÔNG Á SG</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #2E7D32;
+      --accent: #FFD600;
+      --danger: #C62828;
+      --bg: #ffffff;
+      --bg-alt: #f6f7f9;
+      --text: #1f2937;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, sans-serif; color: var(--text); }
+
+    /* Navbar (giống index) */
+    .navbar { background: var(--primary); transition: box-shadow .25s ease; }
+    .navbar.sticky-top.scrolled { box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+    .navbar-brand, .nav-link, .navbar-toggler-icon { color: #fff !important; }
+    .nav-link { opacity: .9; }
+    .nav-link:hover, .nav-link.active { opacity: 1; text-decoration: underline; text-underline-offset: .35rem; }
+    .logo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; background: transparent; display: inline-block; }
+
+    /* Hamburger ⇄ Close icon (giống index) */
+    .navbar-toggler { border: 1px solid rgba(255,255,255,.6); }
+    .navbar-dark .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22' /%3E%3C/svg%3E");
+    }
+    .navbar-dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.95)' stroke-width='2' stroke-linecap='round' d='M7 7L23 23M23 7L7 23' /%3E%3C/svg%3E");
+    }
+
+    /* Phần chung */
+    main > section { padding: 56px 0; scroll-margin-top: 90px; }
+    main > section:nth-of-type(odd) { background: var(--bg); }
+    main > section:nth-of-type(even) { background: var(--bg-alt); }
+    .wrapper { max-width: 1200px; margin: 0 auto; }
+    .section-title { color: var(--primary); font-weight: bold; margin-bottom: 24px; }
+
+    /* Nút quay về */
+    .back-home-btn { background: var(--accent); color: var(--danger); font-weight: bold; border: 2px solid var(--accent); }
+    .back-home-btn:hover { background: #e6c400; color: var(--danger); }
+
+    /* Album */
+    .album-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.06); box-shadow: 0 10px 22px rgba(0,0,0,.08); transition: transform .2s ease, box-shadow .2s ease; }
+    .album-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.1); }
+    .album-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Footer (giống index) */
+    footer { background: var(--primary); color: #fff; padding: 26px 0; }
+
+    /* Back to top (giống index) */
+    .back-to-top { position: fixed; right: 20px; bottom: 20px; background: var(--accent); color: var(--danger); padding: 10px 14px; border-radius: 10px; font-weight: bold; text-decoration: none; z-index: 999; opacity: 0; transition: opacity .35s ease, transform .2s ease; pointer-events: none; }
+    .back-to-top.show { opacity: .85; pointer-events: auto; }
+    .back-to-top:hover { opacity: 1; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <!-- Header: giống hệt index nhưng link trỏ về index.html -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container wrapper">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo01.png" alt="Logo Đông Á SG" class="logo me-2" />
+        <span class="fw-bold">ĐÔNG Á SG</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#gioithieu">Giới thiệu</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#dichvu">Dịch vụ</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#taisao">Tại sao chọn</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#khachhang">Khách hàng</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#lienhe">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero/tiêu đề trang -->
+    <section>
+      <div class="container wrapper">
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+          <div>
+            <h1 class="mb-1 fw-bold">Album ảnh</h1>
+            <p class="mb-0">Bộ sưu tập hình 16:9 – tự co giãn, **trên điện thoại hiển thị 1 ảnh/ hàng**.</p>
+          </div>
+          <div>
+            <a href="index.html" class="btn back-home-btn">← Về trang chủ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lưới album: 1 cột trên mobile, 2 cột md, 3 cột lg -->
+    <section>
+      <div class="container wrapper">
+        <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3" id="albumGrid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer: giống index -->
+  <footer class="text-center">
+    <div class="wrapper">
+      <p class="mb-0">&copy; 2025 Công ty TNHH Dịch Vụ Bảo Vệ An Ninh Đông Á SG. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" id="backToTop">↑ Lên đầu trang</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar shadow khi cuộn (giống index)
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    });
+
+    // Back to top (giống index)
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) backToTopBtn.classList.add('show'); else backToTopBtn.classList.remove('show');
+    });
+
+    // Sinh 24 ảnh tự động: img/album/ab_1.jpg -> ab_24.jpg
+    (function renderAlbum(){
+      const grid = document.getElementById('albumGrid');
+      const total = 24;
+      for (let i = 1; i <= total; i++) {
+        const col = document.createElement('div');
+        col.className = 'col';
+        col.innerHTML = `
+          <div class="album-card ratio ratio-16x9">
+            <img class="album-img" loading="lazy" src="img/album/ab_${i}.jpg" alt="Ảnh album ${i}" />
+          </div>`;
+        grid.appendChild(col);
+      }
+    })();
+  </script>
+</body>
+</html>
