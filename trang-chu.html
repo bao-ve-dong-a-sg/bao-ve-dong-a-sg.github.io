@@ -25,7 +25,7 @@
     .nav-link { opacity: .9; }
     .nav-link:hover, .nav-link.active { opacity: 1; text-decoration: underline; text-underline-offset: .35rem; }
 
-    .logo { max-height: 64px; }
+    .logo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; background: transparent; display: inline-block; }
 
     /* Carousel full-bleed */
     .carousel-item img { object-fit: cover; height: clamp(260px, 40vw, 520px); }
@@ -37,7 +37,7 @@
     /* Bảo đảm cuộn tới anchor không bị che bởi navbar sticky */
     main > section { scroll-margin-top: 90px; }
 
-    .section-title { color: var(--primary); font-weight: 800; margin-bottom: 24px; letter-spacing: .2px; }
+    .section-title { color: var(--primary); font-weight: bold; margin-bottom: 24px; }
     .lead-hero { max-width: 760px; margin: 0 auto 18px; }
 
     /* Buttons */
@@ -129,16 +129,53 @@
     <section id="gioithieu">
       <div class="container wrapper">
         <h2 class="section-title">Giới thiệu</h2>
-        <p>
-          <strong>Địa chỉ:</strong> 109/2/7 Trương Phước Phan, P. Bình Trị Đông, Q. Bình Tân, TP HCM<br />
-          <strong>Email:</strong> baoveanninhdongasg@gmail.com<br />
-          <strong>MST:</strong> 0317751728<br />
-          <strong>Vốn điều lệ:</strong> 2 tỷ VNĐ<br />
-          <strong>Người đại diện:</strong> Bà Phạm Thị Thúy Huỳnh – <strong>Giám đốc</strong>
-        </p>
-        <p><strong>Tầm nhìn:</strong> Trở thành thương hiệu mạnh về dịch vụ bảo vệ, hướng tới cộng đồng và phát triển bền vững.</p>
-        <p><strong>Sứ mệnh:</strong> Cung cấp dịch vụ bảo vệ chuyên nghiệp, tin cậy, đặt sự hài lòng của khách hàng làm trọng tâm.</p>
-        <p><strong>Giá trị cốt lõi:</strong> Chất lượng – Tiến độ – Uy tín – Phát triển bền vững.</p>
+        <div class="row g-4 row-cols-1 row-cols-md-2">
+          <div class="col">
+            <div class="p-4 service-card h-100">
+              <div class="d-flex align-items-center mb-2">
+                <div class="service-icon">🏢</div>
+                <h5 class="mb-0 fw-bold">Thông tin công ty</h5>
+              </div>
+              <p class="mb-1"><strong>Địa chỉ:</strong> 109/2/7 Trương Phước Phan, P. Bình Trị Đông, Q. Bình Tân, TP HCM</p>
+              <p class="mb-1"><strong>Email:</strong> <a href="mailto:baoveanninhdongasg@gmail.com" class="link-dark text-decoration-none">baoveanninhdongasg@gmail.com</a></p>
+              <p class="mb-1"><strong>MST:</strong> 0317751728</p>
+              <p class="mb-1"><strong>Vốn điều lệ:</strong> 2 tỷ VNĐ</p>
+              <p class="mb-0"><strong>Người đại diện:</strong> Bà Phạm Thị Thúy Huỳnh – <strong>Giám đốc</strong></p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-4 service-card h-100">
+              <div class="d-flex align-items-center mb-2">
+                <div class="service-icon">👁️</div>
+                <h5 class="mb-0 fw-bold">Tầm nhìn</h5>
+              </div>
+              <p class="mb-0">Trở thành thương hiệu mạnh về dịch vụ bảo vệ, hướng tới cộng đồng và phát triển bền vững.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-4 service-card h-100">
+              <div class="d-flex align-items-center mb-2">
+                <div class="service-icon">🎯</div>
+                <h5 class="mb-0 fw-bold">Sứ mệnh</h5>
+              </div>
+              <p class="mb-0">Cung cấp dịch vụ bảo vệ chuyên nghiệp, tin cậy, đặt sự hài lòng của khách hàng làm trọng tâm.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-4 service-card h-100">
+              <div class="d-flex align-items-center mb-2">
+                <div class="service-icon">💎</div>
+                <h5 class="mb-0 fw-bold">Giá trị cốt lõi</h5>
+              </div>
+              <ul class="mb-0 ps-3">
+                <li>Chất lượng</li>
+                <li>Tiến độ</li>
+                <li>Uy tín</li>
+                <li>Phát triển bền vững</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
