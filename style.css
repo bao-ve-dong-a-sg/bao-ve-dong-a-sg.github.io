@@ -65,6 +65,20 @@ main > section:nth-of-type(odd) {
 main > section:nth-of-type(even) {
   background: var(--bg-alt);
 }
+/* Hero section */
+#hero {
+  background: #1a4f1e !important;
+  color: #fff;
+}
+#hero h1 {
+  color: #fff;
+}
+#hero .lead-hero {
+  color: #fff;
+}
+#hero .eyebrow {
+  color: var(--accent);
+}
 /* Bảo đảm cuộn tới anchor không bị che bởi navbar sticky */
 main > section {
   scroll-margin-top: 90px;
