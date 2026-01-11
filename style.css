@@ -171,6 +171,19 @@ footer .border-top {
   border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
+/* Thư cảm ơn */
+.thank-you-card {
+  background-color: #fff9e6 !important;
+  border-color: rgba(255, 214, 0, 0.2) !important;
+  color: #1a4f1e;
+  font-family: "Playfair Display", Georgia, serif;
+}
+.thank-you-card p {
+  color: #1a4f1e;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
 /* Tiện ích khung rộng nhất */
 .wrapper {
   max-width: 1200px;
