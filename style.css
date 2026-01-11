@@ -1,0 +1,202 @@
+:root {
+  --primary: #2e7d32;
+  --accent: #ffd600;
+  --danger: #c62828;
+  --bg: #ffffff;
+  --bg-alt: #f6f7f9; /* Xám rất nhạt để xen kẽ */
+  --text: #1f2937;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text);
+}
+
+/* Navbar */
+.navbar {
+  background: #fff;
+  transition: box-shadow 0.25s ease;
+}
+.navbar.sticky-top.scrolled {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+.navbar-brand,
+.nav-link,
+.navbar-toggler-icon {
+  color: #1a4f1e !important;
+}
+.nav-link {
+  opacity: 0.9;
+  font-weight: bold;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary) !important;
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.35rem;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: transparent;
+  display: inline-block;
+}
+
+/* Carousel full-bleed */
+.carousel-item img {
+  object-fit: cover;
+  height: clamp(260px, 40vw, 520px);
+}
+
+/* Sections */
+main > section {
+  padding: 64px 0;
+}
+main > section:nth-of-type(odd) {
+  background: var(--bg);
+}
+main > section:nth-of-type(even) {
+  background: var(--bg-alt);
+}
+/* Bảo đảm cuộn tới anchor không bị che bởi navbar sticky */
+main > section {
+  scroll-margin-top: 90px;
+}
+
+.section-title {
+  color: var(--primary);
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.lead-hero {
+  max-width: 760px;
+  margin: 0 auto 18px;
+}
+
+/* Buttons */
+.call-now-btn {
+  background: var(--accent);
+  color: var(--danger);
+  font-weight: bold;
+  border: 2px solid var(--accent);
+}
+.call-now-btn:hover {
+  background: #e6c400;
+  color: var(--danger);
+}
+
+/* Dịch vụ: grid thẻ đẹp hơn */
+.service-card {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+.service-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+/* Gạch nhấn tiêu đề nhỏ */
+.eyebrow {
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--accent);
+  color: var(--danger);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+.back-to-top.show {
+  opacity: 0.85;
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: #fff;
+  padding: 26px 0;
+}
+
+/* Tiện ích khung rộng nhất */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Logo khách hàng */
+.client-logos img.client-logo {
+  max-height: 56px;
+  width: auto;
+  opacity: 1;
+  transition: transform 0.2s ease;
+}
+.client-logos img.client-logo:hover {
+  transform: translateY(-2px);
+}
+/* Hamburger ⇄ Close icon */
+.navbar-toggler {
+  border: 1px solid rgba(26, 79, 30, 0.6);
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(26,79,30,0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22' /%3E%3C/svg%3E");
+}
+.navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(26,79,30,0.95)' stroke-width='2' stroke-linecap='round' d='M7 7L23 23M23 7L7 23' /%3E%3C/svg%3E");
+}
+/* Tuỳ chọn: tô vàng thương hiệu — thêm class 'brand-yellow' vào .client-logos để áp dụng */
+.client-logos.brand-yellow img.client-logo {
+  filter: grayscale(1) brightness(0) sepia(1) saturate(6000%)
+    hue-rotate(5deg);
+}
+/* Hình ảnh (preview trên trang chủ) */
+.album-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+.album-thumb:hover {
+  transform: translateY(-2px);
+}
