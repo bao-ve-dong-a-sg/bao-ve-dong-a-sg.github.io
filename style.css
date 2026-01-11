@@ -171,6 +171,11 @@ footer .border-top {
   border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
+/* Call to Action - Gọi ngay */
+.call-to-action-section {
+  padding: 48px 0;
+}
+
 /* Thư cảm ơn */
 .thank-you-card {
   background-color: #fff9e6 !important;
