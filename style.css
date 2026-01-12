@@ -139,40 +139,53 @@ body {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Mobile: Thu nhỏ logo khi scroll xuống */
+/* Thu nhỏ logo khi scroll xuống - Mobile & Desktop */
+.navbar {
+  transition: padding 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+.navbar.scrolled-down {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.navbar-brand {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.navbar-brand.scrolled-down {
+  padding: 0;
+}
+.navbar-brand .logo {
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              margin 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+.navbar-brand.scrolled-down .logo {
+  margin-right: 0.5rem !important;
+}
+
+/* Mobile: Logo thu nhỏ xuống 32px */
 @media (max-width: 991.98px) {
-  .navbar {
-    transition: padding 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
-  }
-  .navbar.scrolled-down {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-  .navbar-brand {
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-  }
-  .navbar-brand.scrolled-down {
-    padding: 0;
-  }
-  .navbar-brand .logo {
-    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-                height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                margin 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center;
-  }
   .navbar-brand.scrolled-down .logo {
     width: 32px;
     height: 32px;
-    margin-right: 0.5rem !important;
   }
-  .navbar-brand .fw-bold {
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
+}
+
+/* Desktop: Logo thu nhỏ xuống 40px */
+@media (min-width: 992px) {
+  .navbar-brand.scrolled-down .logo {
+    width: 40px;
+    height: 40px;
   }
-  .navbar-brand.scrolled-down .fw-bold {
-    transform: translateX(0);
-  }
+}
+
+.navbar-brand .fw-bold {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+.navbar-brand.scrolled-down .fw-bold {
+  transform: translateX(0);
 }
 
 /* Carousel full-bleed */

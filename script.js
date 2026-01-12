@@ -13,19 +13,13 @@ function handleScroll() {
     navbar.classList.remove("scrolled");
   }
   
-  // Trên mobile: thu nhỏ logo khi scroll
-  if (window.innerWidth < 992) {
-    if (scrollTop > 50) {
-      // Scroll xuống - thu nhỏ logo, làm mảnh navbar
-      if (navbarBrand) navbarBrand.classList.add("scrolled-down");
-      navbar.classList.add("scrolled-down");
-    } else {
-      // Scroll lên đầu - logo kích thước bình thường
-      if (navbarBrand) navbarBrand.classList.remove("scrolled-down");
-      navbar.classList.remove("scrolled-down");
-    }
+  // Thu nhỏ logo khi scroll (Mobile & Desktop)
+  if (scrollTop > 50) {
+    // Scroll xuống - thu nhỏ logo, làm mảnh navbar
+    if (navbarBrand) navbarBrand.classList.add("scrolled-down");
+    navbar.classList.add("scrolled-down");
   } else {
-    // Desktop: luôn giữ logo kích thước bình thường
+    // Scroll lên đầu - logo kích thước bình thường
     if (navbarBrand) navbarBrand.classList.remove("scrolled-down");
     navbar.classList.remove("scrolled-down");
   }
