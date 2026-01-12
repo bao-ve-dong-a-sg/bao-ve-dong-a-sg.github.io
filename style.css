@@ -83,25 +83,43 @@ body {
   /* Nút mũi tên lên để đóng menu - ở chính giữa đáy menu */
   .navbar-collapse {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .navbar-collapse-close {
-    display: block;
-    width: 100%;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
     margin-top: 1rem;
-    padding: 0.5rem 0;
-    background: transparent;
+    padding: 0;
+    background: #fff;
     border: none;
+    border-radius: 50%;
     color: #1a4f1e;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(26, 79, 30, 0.2);
+    animation: float 2.5s ease-in-out infinite;
   }
   .navbar-collapse-close:hover {
     color: var(--primary);
-    transform: translateY(-2px);
+    animation: none;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(26, 79, 30, 0.3);
+  }
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
   }
 }
 
@@ -121,23 +139,39 @@ body {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Mobile: Ẩn logo khi scroll xuống */
+/* Mobile: Thu nhỏ logo khi scroll xuống */
 @media (max-width: 991.98px) {
   .navbar {
-    transition: padding 0.3s ease;
+    transition: padding 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
   }
   .navbar.scrolled-down {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .navbar-brand {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
   }
   .navbar-brand.scrolled-down {
     padding: 0;
   }
+  .navbar-brand .logo {
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+  }
   .navbar-brand.scrolled-down .logo {
-    display: none !important;
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem !important;
+  }
+  .navbar-brand .fw-bold {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
   }
   .navbar-brand.scrolled-down .fw-bold {
-    font-size: 0.95rem;
+    transform: translateX(0);
   }
 }
 
@@ -328,23 +362,19 @@ footer .border-top {
   font-size: 1rem;
 }
 
-/* Mobile: Điều chỉnh kích thước nút menu cho phù hợp với brand text */
+/* Mobile: Điều chỉnh nút menu cho phù hợp với brand text */
 @media (max-width: 991.98px) {
   .navbar-toggler {
     padding: 0.4rem 0.6rem;
-    font-size: 0.95rem;
+    transition: padding 0.4s ease;
   }
   .navbar-toggler-icon {
     width: 1.2em;
     height: 1.2em;
+    transition: width 0.4s ease, height 0.4s ease;
   }
   .navbar.scrolled-down .navbar-toggler {
-    padding: 0.35rem 0.5rem;
-    font-size: 0.9rem;
-  }
-  .navbar.scrolled-down .navbar-toggler-icon {
-    width: 1.1em;
-    height: 1.1em;
+    padding: 0.4rem 0.6rem;
   }
 }
 
