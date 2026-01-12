@@ -1,12 +1,43 @@
 // Toggle bóng đổ cho navbar khi cuộn
 const navbar = document.querySelector(".navbar");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 10) {
+const navbarBrand = document.querySelector(".navbar-brand");
+const logo = document.querySelector(".logo");
+
+function handleScroll() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  // Bóng đổ khi scroll
+  if (scrollTop > 10) {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
   }
-});
+  
+  // Trên mobile: ẩn/hiện logo khi scroll
+  if (window.innerWidth < 992) {
+    if (scrollTop > 50) {
+      // Scroll xuống - ẩn logo, làm mảnh navbar
+      if (logo) logo.style.display = "none";
+      if (navbarBrand) navbarBrand.classList.add("scrolled-down");
+      navbar.classList.add("scrolled-down");
+    } else {
+      // Scroll lên đầu - hiện logo
+      if (logo) logo.style.display = "block";
+      if (navbarBrand) navbarBrand.classList.remove("scrolled-down");
+      navbar.classList.remove("scrolled-down");
+    }
+  } else {
+    // Desktop: luôn hiện logo
+    if (logo) logo.style.display = "block";
+    if (navbarBrand) navbarBrand.classList.remove("scrolled-down");
+    navbar.classList.remove("scrolled-down");
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("resize", handleScroll);
+// Chạy ngay khi load để xử lý trường hợp đã scroll
+handleScroll();
 
 // Đóng menu mobile khi click nút mũi tên lên
 const navbarCollapseClose = document.querySelector(".navbar-collapse-close");
