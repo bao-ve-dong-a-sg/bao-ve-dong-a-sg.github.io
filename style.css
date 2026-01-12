@@ -19,6 +19,7 @@ body {
 .navbar {
   background: #fff;
   transition: box-shadow 0.25s ease;
+  border-bottom: 1px solid rgba(26, 79, 30, 0.1);
 }
 .navbar.sticky-top.scrolled {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
@@ -38,6 +39,76 @@ body {
   opacity: 1;
   text-decoration: underline;
   text-underline-offset: 0.35rem;
+}
+
+/* Mobile Navbar - Nút nổi */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 1rem 0;
+  }
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    width: 100%;
+  }
+  .nav-item {
+    flex: 0 0 auto;
+  }
+  .nav-link {
+    display: inline-block;
+    padding: 0.75rem 1.125rem;
+    background: #f8f9fa;
+    border: 2px solid #1a4f1e;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(26, 79, 30, 0.15);
+    white-space: nowrap;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    background: var(--primary);
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 79, 30, 0.25);
+    text-decoration: none !important;
+  }
+  .nav-link.active {
+    background: #1a4f1e;
+  }
+  
+  /* Nút mũi tên lên để đóng menu - ở chính giữa đáy menu */
+  .navbar-collapse {
+    position: relative;
+  }
+  .navbar-collapse-close {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    background: transparent;
+    border: none;
+    color: #1a4f1e;
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .navbar-collapse-close:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse-close {
+    display: none;
+  }
 }
 
 .logo {

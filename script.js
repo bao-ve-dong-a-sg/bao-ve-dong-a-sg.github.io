@@ -8,6 +8,20 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Đóng menu mobile khi click nút mũi tên lên
+const navbarCollapseClose = document.querySelector(".navbar-collapse-close");
+const navbarCollapse = document.getElementById("navbarNav");
+const navbarToggler = document.querySelector(".navbar-toggler");
+
+if (navbarCollapseClose && navbarCollapse && navbarToggler) {
+  navbarCollapseClose.addEventListener("click", () => {
+    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+    if (bsCollapse) {
+      bsCollapse.hide();
+    }
+  });
+}
+
 // Hiện nút Back to Top khi cuộn
 const backToTopBtn = document.getElementById("backToTop");
 window.addEventListener("scroll", () => {
