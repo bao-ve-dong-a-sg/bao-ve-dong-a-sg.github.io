@@ -328,3 +328,35 @@ footer .border-top {
 .album-thumb:hover {
   transform: translateY(-2px);
 }
+
+/* Breadcrumb */
+.breadcrumb-container {
+  background: #f8f9fa;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(26, 79, 30, 0.1);
+}
+.breadcrumb {
+  margin-bottom: 0;
+  padding: 0;
+  background: transparent;
+}
+.breadcrumb-item {
+  font-size: 0.875rem;
+}
+.breadcrumb-item a {
+  color: #1a4f1e;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.breadcrumb-item a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.breadcrumb-item.active {
+  color: #6c757d;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  color: #6c757d;
+  padding: 0 0.5rem;
+}
